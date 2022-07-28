@@ -1,0 +1,45 @@
+(() => {
+    // grab a ref to the audio
+    let track = document.querySelector('audio'),
+        startBut = document.querySelector('.start-button');
+
+    function startTextAnim() {
+        // add some animation classes to the main text animation paths
+        let textAnimPaths = document.querySelectorAll('#firstFive > path'),
+            tonyImage = document.querySelector('.vincent-zoom');
+
+        textAnimPaths.forEach(path => path.classList.add('text-fade'));
+
+        tonyImage.classList.add('zoom-tony');
+
+        // hide the play button
+        startBut.classList.add('hidden');
+    }
+
+    function setup() {
+        // animate the start screen away
+        // select the pieces
+        let introPieces = document.querySelectorAll("#Intro g"),
+            kinect = document.querySelector("#Intro #kinect"),
+            vincentImg = document.querySelector('.vincent-intro'),
+            firstFive = document.querySelectorAll('#firstFive path');
+        // start the audio
+        track.play();
+
+        // Hide cat
+        startBut.classList.add("hidden");
+        
+        // add the animation class to make them disappear
+        kinect.classList.add("intro-fade");
+        introPieces.forEach(piece => piece.classList.add('intro-fade'));
+        firstFive.forEach(piece => piece.classList.add('intro-fade'));
+
+        vincentImg.addEventListener('animationend', startTextAnim);
+
+        // add tony's animation class and move him left
+        vincentImg.classList.add('animate-tony');
+
+    }
+
+    startBut.addEventListener('click', setup);
+})();
