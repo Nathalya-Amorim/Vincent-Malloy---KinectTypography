@@ -1,0 +1,132 @@
+* {
+    border: none;
+    padding: 0;
+    margin: 0;
+
+    box-sizing: border-box;
+}
+
+body {
+    font-size: 16px;
+    background-color: black;
+    color: white;
+}
+
+.hidden { display: none; }
+
+.animation {
+    width: 555px;
+    margin: 0 auto;
+    border: thin solid black;
+
+    position: relative;
+    overflow: hidden;
+
+    background-color: white;
+}
+
+#Intro { position: relative; z-index: 5000; }
+
+
+.text-fade { animation: fadeWordsIn 2s forwards; }
+
+.vincent-intro {
+    position: absolute;
+    top: 260px;
+    left: 0;
+
+    height: 150px;
+
+    animation-delay: 2s;
+    animation-fill-mode: forwards;
+    animation-duration: 2s;
+}
+
+.animate-tony {
+    animation-name: moveTony;
+}
+
+
+/* the 'greater than' means a direct descendant of the original container 
+(the element with an id of #firstFive) */
+
+#firstFive > path { opacity: 0; }
+
+.start-button { 
+    position: absolute;  
+    bottom: 30px;
+    left: 440px;
+    width: 100px;
+
+    cursor: pointer;
+
+    z-index: 5001;
+}
+
+/* keyframe animations go here */
+#Intro { animation-duration: 4s; animation-delay: 0s }
+#burton { animation-duration: 4s; animation-delay: 3s }
+#tim { animation-duration: 4s;  animation-delay: 3s }
+#by { animation-duration: 3s; animation-delay: 3s }
+#vincent { animation-duration: 6s;  animation-delay: 3s }
+#kinect { animation-duration: 3s;  animation-delay: 3s }
+
+/* text animation synced to audio */
+#Vincentt { animation-delay: 7s; }
+#Malloy { animation-delay: 7.3s; }
+#is { animation-delay: 7.7s;}
+#seven { animation-delay: 8s; }
+
+#years { animation-delay: 8.2s; }
+#old { animation-delay: 8.5s; }
+#hesOne { animation-delay: 9.5s; }
+#always { animation-delay: 10.2s; }
+#polite { animation-delay: 10.5s; }
+#and { animation-delay: 11s; }
+#does { animation-delay: 10.9s; }
+#hesTwo { animation-delay: 11s; }
+#told { animation-delay: 11.2s; }
+
+.intro-fade {
+    animation-name: fadeElementOut;
+    animation-fill-mode: forwards;
+}
+
+.vincent-zoom { animation: zoomTony 2.5s forwards; }
+
+.vincent-zoom { 
+    position: absolute;
+    z-index: 500;
+    bottom: 0px;
+    right: -10px;
+
+    transform: scale(0.7);
+    animation-delay: 2s;
+
+    opacity: 0;
+}
+
+
+/* generic opacity fade */
+@keyframes fadeElementOut {
+    0% { opacity: 1 }
+    100% { opacity: 0 }
+}
+
+@keyframes moveTony {
+    to { left: -500px; }
+}
+
+@keyframes fadeWordsIn {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+}
+
+@keyframes zoomTony {
+    0% { opacity: 0 }
+    10% { opacity: 1 }
+
+    80% { transform: scale(1.8); opacity: 1; }
+    100% { opacity: 1; transform: scale(1); }
+}
+
