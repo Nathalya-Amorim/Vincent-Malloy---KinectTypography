@@ -27,8 +27,7 @@ body {
 
 #Intro { position: relative; z-index: 5000; }
 
-
-.text-fade { animation: fadeWordsIn 2s forwards; }
+.text-fade { animation: fadeWordsIn 4s forwards; }
 
 .vincent-intro {
     position: absolute;
@@ -42,15 +41,13 @@ body {
     animation-duration: 2s;
 }
 
-.animate-tony {
-    animation-name: moveTony;
+.animate-vincent {
+    animation-name: moveVincent;
 }
 
-
-/* the 'greater than' means a direct descendant of the original container 
-(the element with an id of #firstFive) */
-
-#firstFive > path { opacity: 0; }
+#firstFive > path, #secondFive > path, #lastOne > path{ 
+    opacity: 0; 
+}
 
 .start-button { 
     position: absolute;  
@@ -63,36 +60,62 @@ body {
     z-index: 5001;
 }
 
-/* keyframe animations go here */
-#Intro { animation-duration: 4s; animation-delay: 0s }
+#Intro {animation-duration: 4s; animation-delay: 0s }
 #burton { animation-duration: 4s; animation-delay: 3s }
 #tim { animation-duration: 4s;  animation-delay: 3s }
 #by { animation-duration: 3s; animation-delay: 3s }
 #vincent { animation-duration: 6s;  animation-delay: 3s }
 #kinect { animation-duration: 3s;  animation-delay: 3s }
 
-/* text animation synced to audio */
-#Vincentt { animation-delay: 7s; }
-#Malloy { animation-delay: 7.3s; }
-#is { animation-delay: 7.7s;}
-#seven { animation-delay: 8s; }
+#Vincentt {animation-delay: 7.0s; }
+#Malloy { animation-delay: 7.2s; }
+#is { animation-delay: 7.9s;}
+#seven { animation-delay: 8.3s; }
 
-#years { animation-delay: 8.2s; }
-#old { animation-delay: 8.5s; }
-#hesOne { animation-delay: 9.5s; }
-#always { animation-delay: 10.2s; }
-#polite { animation-delay: 10.5s; }
-#and { animation-delay: 11s; }
+#years { animation-delay: 8.6s; }
+#old { animation-delay: 8.8s; }
+#rec01 { animation-duration: 7s; animation-delay: 9.5s; }
+#hesOne { animation-delay: 10s; }
+#always { animation-delay: 10.4s; }
+#p { animation-delay: 10s; }
+#o { animation-delay: 10.2s; }
+#l { animation-delay: 10.3s; }
+#I { animation-delay: 10.4s; }
+#t { animation-delay: 10.5s; }
+#e { animation-delay: 10.6s; }
+#and { animation-delay: 10.8s; }
 #does { animation-delay: 10.9s; }
-#hesTwo { animation-delay: 11s; }
-#told { animation-delay: 11.2s; }
+#ehat  { animation-delay: 11.0s; }
+#hesTwo { animation-delay: 11.1s; }
+#told { animation-delay: 11.8s; }
+
+#for { animation-delay: 13.3s; }
+#a { animation-delay: 13.5s; }
+#boy { animation-delay: 13.7s; }
+#hisThree { animation-delay: 13.9s; }
+#age { animation-delay: 14.3s; }
+#isTwo { animation-delay: 14.7s; }
+#rect02 { animation-delay: 15s; }
+#considerate { animation-delay: 15s; }
+#andOne { animation-delay: 15.5s; }
+#nice { animation-delay: 15.7s; } 
+
+#but { animation-delay: 17.2s; }
+#heFour { animation-delay: 17.3s; }
+#wants { animation-delay: 17.5s; }
+#to { animation-delay: 17.7s; }
+#be { animation-delay: 17.9s; }
+#just { animation-delay: 18.0s; }
+#like { animation-delay: 19s; }
+#vincentLast { animation-delay: 19.5s; }
+#price { animation-delay: 20s; } 
 
 .intro-fade {
     animation-name: fadeElementOut;
     animation-fill-mode: forwards;
 }
 
-.vincent-zoom { animation: zoomTony 2.5s forwards; }
+.vincent-zoom { animation: zoomVincent 10s forwards; }
 
 .vincent-zoom { 
     position: absolute;
@@ -101,11 +124,25 @@ body {
     right: -10px;
 
     transform: scale(0.7);
-    animation-delay: 2s;
+    animation-delay: 20.3s;
 
     opacity: 0;
 }
 
+#vincentImgRight {
+    position: absolute;
+    top: 260px;
+    right: -200px;
+    height: 150px;
+    width:30%;
+}
+
+.moveRight {
+    animation:moveToRight;
+    animation-delay: 11.0s;
+    animation-fill-mode: forwards;
+    animation-duration: 8s;
+}
 
 /* generic opacity fade */
 @keyframes fadeElementOut {
@@ -113,7 +150,7 @@ body {
     100% { opacity: 0 }
 }
 
-@keyframes moveTony {
+@keyframes moveVincent {
     to { left: -500px; }
 }
 
@@ -122,11 +159,20 @@ body {
     100% { opacity: 1; }
 }
 
-@keyframes zoomTony {
+@keyframes zoomVincent {
     0% { opacity: 0 }
     10% { opacity: 1 }
 
-    80% { transform: scale(1.8); opacity: 1; }
-    100% { opacity: 1; transform: scale(1); }
+    80% { transform: scale(1.8); opacity: 0; }
+    100% { opacity: 0; transform: scale(1); }
+}
+
+
+@keyframes moveToRight {
+    to { right:0px; }
+
+    80% { opacity: 1 }
+
+    100% { opacity: 0 }
 }
 
