@@ -5,12 +5,14 @@
 
     function startTextAnim() {
         // add some animation classes to the main text animation paths
-        let textAnimPaths = document.querySelectorAll('#firstFive > path'),
-            tonyImage = document.querySelector('.vincent-zoom');
+        let textAnimPaths = document.querySelectorAll('#firstFive > path, #secondFive > path, #lastOne > path'),
+            vincentImage = document.querySelector('.vincent-zoom');
+
 
         textAnimPaths.forEach(path => path.classList.add('text-fade'));
 
-        tonyImage.classList.add('zoom-tony');
+        vincentImage.classList.add('zoom-vincent');
+      
 
         // hide the play button
         startBut.classList.add('hidden');
@@ -22,8 +24,13 @@
         let introPieces = document.querySelectorAll("#Intro g"),
             kinect = document.querySelector("#Intro #kinect"),
             vincentImg = document.querySelector('.vincent-intro'),
-            firstFive = document.querySelectorAll('#firstFive path');
+            firstFive = document.querySelectorAll('#firstFive > path'),
+            secondFive = document.querySelectorAll('#secondFive > path'),
+            lastOne = document.querySelectorAll('#lastOne > path '),
+            malloyImage = document.querySelector('#vincentImgRight');
+         
         // start the audio
+        console.log(firstFive, secondFive);
         track.play();
 
         // Hide cat
@@ -33,11 +40,17 @@
         kinect.classList.add("intro-fade");
         introPieces.forEach(piece => piece.classList.add('intro-fade'));
         firstFive.forEach(piece => piece.classList.add('intro-fade'));
+        secondFive.forEach(piece => piece.classList.add('intro-fade'));
+        lastOne.forEach(piece => piece.classList.add('intro-fade'));
 
+        
+ 
         vincentImg.addEventListener('animationend', startTextAnim);
 
-        // add tony's animation class and move him left
-        vincentImg.classList.add('animate-tony');
+        // add vincent's animation class and move him left
+        vincentImg.classList.add('animate-vincent');
+        malloyImage.classList.add('moveRight');
+        
 
     }
 
