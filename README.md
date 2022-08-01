@@ -9,12 +9,11 @@ Vincent is Tim Burton's 6-minute stop-motion short film made in 1982. It is blac
 "Burton got Vincent Price — an actor known for various horror movies — to narrate his poem"(Sturdevant & Herald, 2012). 
 The film tells Vincent's story, who dreams about being the people he admires - Vincent Price and Edgar Allan Poe. 
 
-#  Video
-[Vincent by Tim Burton](https://www.youtube.com/watch?v=1Vxs9ySe7_4)
-
--Bibliography:
+Bibliography:
 Sturdevant, K., & Herald. (2012, October 25). Review: Tim Burton’s “Vincent.” The Hawks’ Herald. Retrieved August 1, 2022, from https://rwuhawksherald.com/4269/arts-and-culture/review-tim-burtons-vincent/ 
 
+#  Video
+[Vincent by Tim Burton](https://www.youtube.com/watch?v=1Vxs9ySe7_4)
 
 ## INSTALLATION
 No need to install it.
